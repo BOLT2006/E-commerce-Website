@@ -1,7 +1,7 @@
 export const homeQuantityToggle = (event, id, stock) => {
   // konsa card click kiys
   const currentCardElement = document.querySelector(`#card${id}`);
-  // konse card ki quantity hae
+  // card ki quantity kitni hae
   const productQuantity = currentCardElement.querySelector(".productQuantity");
 
   // Access the current card quantity

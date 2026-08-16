@@ -1,4 +1,5 @@
 import { homeQuantityToggle } from "./quantityToggle.js";
+import { addToCart } from "./addToCart.js";
 const productContainer = document.querySelector("#productContainer");
 const productTemplate = document.querySelector("#productTemplate");
 
@@ -14,8 +15,7 @@ export const showProductContainer = (products) => {
     const productClone = document.importNode(productTemplate.content, true); // we use 'true' to also import the children of parent node
 
     /* Give card unique*/
-    productClone.querySelector('#cardValue').setAttribute('id' , `card${id}`);  //example : id = 'card1'
-
+    productClone.querySelector("#cardValue").setAttribute("id", `card${id}`); //example : id = 'card1'
 
     productClone.querySelector(".productName").textContent = name;
     productClone.querySelector(".productImage").src = image;
@@ -33,6 +33,13 @@ export const showProductContainer = (products) => {
       .querySelector(".stockElement")
       .addEventListener("click", (e) => {
         homeQuantityToggle(event, id, stock);
+      });
+
+    /* Add to cart */
+    productClone
+      .querySelector(".add-to-cart-button")
+      .addEventListener("click", (event) => {
+        addToCart(event, id, stock);
       });
 
     productContainer.append(productClone);
