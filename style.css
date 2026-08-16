@@ -854,6 +854,10 @@ footer {
   background-color: var(--buttonColor);
   color: #fff;
   padding: 1rem 2rem;
+
+  .fa-cart-shopping {
+    padding-right: 0.6rem;
+  }
 }
 
 .add-to-cart-button,
